@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <div className="navbar bg-base-200 py-3">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link to="/" className="btn text-xl">
+          Cook
+        </Link>
       </div>
       <div className="flex-none">
         <div className="form-control">
@@ -42,16 +46,13 @@ export default function Header() {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow bg-base-200 rounded-lg w-52"
           >
             <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
+              <Link to="profile">Profile</Link>
             </li>
             <li>
-              <a>Settings</a>
+              <Link to="settings">Settings</Link>
             </li>
             <li>
               <a>Logout</a>

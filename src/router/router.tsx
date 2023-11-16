@@ -6,7 +6,14 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children: [{ path: "/", element: <App /> }],
+    children: [
+      {
+        path: "/",
+        element: <App />,
+      },
+      { path: "profile", element: <h1>Profile</h1> },
+      { path: "settings", element: <h1>Settings</h1> },
+    ],
   },
 ]);
 
