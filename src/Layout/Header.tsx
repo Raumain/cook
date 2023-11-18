@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
 
 export default function Header() {
+  const [isHovered, setIsHovered] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [1, isHovered ? 1 : 0.5]
+  );
   return (
-    <div className="navbar bg-base-200 py-3">
+    <motion.div
+      style={{ opacity }}
+      className="fixed navbar bg-base-200 py-3 transition"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="flex-1">
         <Link to="/" className="btn text-xl">
           Cook
@@ -60,6 +74,6 @@ export default function Header() {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

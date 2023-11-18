@@ -3,7 +3,7 @@ import Header from "./Header";
 
 export default function Layout() {
   return (
-    <div className="h-screen" data-theme="night">
+    <div className="" data-theme="night">
       <Header />
       <div className="p-10">
         <Outlet />
