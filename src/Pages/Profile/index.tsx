@@ -1,4 +1,5 @@
 import Banner from "./components/Banner";
+import Recipes from "./components/Recipes";
 
 export default function Profile() {
   return (
@@ -9,9 +10,9 @@ export default function Profile() {
           <img
             src="https://loremflickr.com/300/300"
             alt=""
-            className="rounded w-52 h-52 border-2 border-accent"
+            className="rounded w-52 h-52 border-2 border-secondary"
           />
-          <div className="flex items-center justify-between w-full h-24">
+          <div className="flex items-center justify-between w-full h-24 py-1">
             <div className="flex flex-col justify-between h-full">
               <p className="text-[24px] font-bold">John Doe</p>
               <small className="text-[14px] block text-accent">@johndoe</small>
@@ -52,30 +53,7 @@ export default function Profile() {
             </div>
           </div>
         </div>
-
-        {/* <div className="relative flex flex-col items-center justify-center w-full bg-[url(https://loremflickr.com/1920/1080)] bg-cover bg-no-repeat bg-center border p-1 border-blue">
-          <img
-            src="https://loremflickr.com/300/300"
-            alt=""
-            className="rounded w-52 h-52 border-4 border-accent"
-          />
-          <p className="text-[24px] font-bold">John Doe</p>
-          <small className="text-accent">Joined since 2023</small>
-        </div>
-        <div className="flex items-center justify-center gap-20 p-1">
-          <div className="flex flex-col items-center">
-            <p className="text-[24px] font-bold">120</p>
-            <small className="text-accent">Followers</small>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="text-[24px] font-bold">120</p>
-            <small className="text-accent">Following</small>
-          </div>
-          <div className="flex flex-col items-center">
-            <p className="text-[24px] font-bold">120</p>
-            <small className="text-accent">Recipes</small>
-          </div>
-        </div> */}
+        <Recipes />
       </section>
     </section>
   );
