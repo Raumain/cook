@@ -5,7 +5,7 @@ export default function Layout() {
   return (
     <div className="" data-theme="night">
       <Header />
-      <div className="p-10">
+      <div className="p-10 pt-20">
         <Outlet />
       </div>
     </div>
