@@ -3,7 +3,7 @@ import Recipes from "./components/Recipes";
 
 export default function Profile() {
   return (
-    <section className="flex flex-col items-center min-h-screen w-full bg-base-200">
+    <section className="flex flex-col items-center w-full bg-base-200">
       <section className="flex flex-col items-center justify-center w-full p-1">
         <Banner />
         <div className="flex items-end gap-5 -mt-28 px-6 py- w-full">
