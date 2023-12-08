@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState } from "react";
+import LoginButton from "../Components/LoginButton";
+import LogoutButton from "../Components/LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Header() {
+  const { user, isAuthenticated } = useAuth0();
   const [isHovered, setIsHovered] = useState(false);
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(
     scrollYProgress,
     [0, 1],
-    [1, isHovered ? 1 : 0.5]
+    [1, isHovered ? 1 : 0.1]
   );
   return (
     <motion.div
@@ -52,25 +56,30 @@ export default function Header() {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
+              <img alt="Tailwind CSS Navbar component" src={user?.picture} />
             </div>
           </label>
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-4 z-[1] p-2 shadow bg-base-200 rounded-lg w-52"
           >
-            <li>
-              <Link to="profile">Profile</Link>
-            </li>
-            <li>
-              <Link to="settings">Settings</Link>
-            </li>
-            <li>
-              <a>Logout</a>
-            </li>
+            {isAuthenticated ? (
+              <>
+                <li>
+                  <Link to="profile">Profile</Link>
+                </li>
+                <li>
+                  <Link to="settings">Settings</Link>
+                </li>
+                <li>
+                  <LogoutButton />
+                </li>
+              </>
+            ) : (
+              <li>
+                <LoginButton />
+              </li>
+            )}
           </ul>
         </div>
       </div>
