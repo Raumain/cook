@@ -2,7 +2,7 @@ export default function Card() {
   return (
     <section
       id="card"
-      className="flex flex-col gap-5 bg-base-200 p-2 shadow-xl rounded-xl w-full mb-8"
+      className="flex flex-col gap-5 bg-base-200 p-2 shadow-xl rounded-xl w-full mb-8 border border-secondary"
     >
       <div id="card-header" className="flex gap-5">
         <button className="flex flex-row items-start btn h-fit p-1 pr-3">
@@ -22,7 +22,7 @@ export default function Card() {
           </div>
         </button>
       </div>
-      <div id="card-body" className="flex flex-col gap-5 w-full">
+      <div id="card-body" className="flex flex-col gap-5 p-1 w-full">
         <div>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
           mollitia aperiam nostrum architecto fugiat laudantium tempora saepe et
