@@ -15,7 +15,7 @@ export default function Recipes() {
 
 function RecipeCard() {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl cursor-pointer hover:scale-110 transition">
+    <div className="card w-96 bg-base-100 shadow-xl cursor-pointer hover:scale-110 transition border border-secondary">
       <figure className="w-full h-44 bg-[url(https://loremflickr.com/100/100)] bg-cover bg-center bg-no-repeat"></figure>
       <div className="card-body">
         <h2 className="card-title">
